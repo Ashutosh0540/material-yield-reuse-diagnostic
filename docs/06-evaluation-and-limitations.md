@@ -8,7 +8,7 @@ The checked-in standard-library `unittest` suite was run from `prototype/` with:
 python3 -m unittest discover -s tests -v
 ```
 
-It covers compatible material, incompatible grade, insufficient dimensions, unavailable stock, restricted project transfer, unknown transfer permission, unknown certification, malformed/missing inputs, and the explicit human-approval boundary. The current suite contains 12 tests.
+It covers compatible material, incompatible grade, insufficient dimensions, unavailable stock, restricted project transfer, same-project ownership mismatch, unknown transfer permission, unknown certification, malformed/missing inputs, the explicit human-approval boundary, and the documented CLI workflow. The current suite contains 14 tests.
 
 Passing tests establish that these selected code paths return expected results for the tested synthetic inputs. They do **not** establish engineering compatibility, valid material certification, data quality, useful business outcomes, performance at scale, integration correctness, safe operational use, or production readiness.
 

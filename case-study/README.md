@@ -1,4 +1,4 @@
-# Case study: Material Yield & Reuse Decision Support
+# Case study: Material Yield & Reuse Diagnostic
 
 ## Context
 

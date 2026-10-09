@@ -8,6 +8,7 @@
 | `prototype/src/decision.py::validate_input` | Validates object/list shape, all required requirement fields, positive finite dimensions, and candidate object IDs. |
 | `prototype/src/decision.py::evaluate_candidate` | Applies deterministic checks and returns a status, reason list, and `accepted: false`. |
 | `prototype/src/decision.py::approve_recommendation` | Returns an accepted copy only when explicitly passed `human_approved=True` and status is eligible. It is not called by the CLI and has no persistence or identity controls. |
+| `prototype/tests/` | Exercises rule outcomes, approval boundaries, ownership restrictions, and the documented CLI workflow. |
 | `prototype/data/example_case.json` | Synthetic input fixture. |
 
 ```mermaid

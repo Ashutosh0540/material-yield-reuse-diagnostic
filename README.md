@@ -1,6 +1,6 @@
-# Material Yield & Reuse Decision Support
+# Material Yield & Reuse Diagnostic
 
-*A synthetic-data prototype supporting a structural steel fabrication FDE case study.*
+*A synthetic-data decision-support prototype supporting a structural steel fabrication FDE case study.*
 
 > **SYNTHETIC DEMONSTRATION DATA — NOT CLIENT DATA**
 >
@@ -77,11 +77,11 @@ The checked-in case requires grade `S355`, thickness `12 mm`, and a `1200 × 500
 | [`docs/`](docs/01-project-overview.md) | Project overview, workflow, diagnostic, data, design, and evaluation documentation. |
 | [`prototype/src/`](prototype/src/) | Input validation, deterministic rules, and CLI. |
 | [`prototype/data/example_case.json`](prototype/data/example_case.json) | One fully synthetic requirement with six illustrative candidates. |
-| [`prototype/tests/`](prototype/tests/) | Unit tests for implemented rules and approval boundary. |
+| [`prototype/tests/`](prototype/tests/) | Unit and CLI smoke tests for implemented rules and approval boundary. |
 | [`reports/sample-run.md`](reports/sample-run.md) | Reproducible run notes and observed output summary. |
 | [`AI_USAGE.md`](AI_USAGE.md) | AI assistance and review disclosure. |
 
-## Quick start
+## Reproducible end-to-end demonstration
 
 Requires Python 3.9+ and no third-party packages. Run from the repository root:
 
@@ -91,7 +91,9 @@ python3 -m src.evaluate data/example_case.json
 python3 -m unittest discover -s tests -v
 ```
 
-Expected test result: **12 tests pass** in the current checked-in suite. The [evaluation document](docs/06-evaluation-and-limitations.md) explains what that does and does not establish.
+The first command is the smallest end-to-end workflow: it reads the fabricated requirement and remnant records, validates them, applies the deterministic screening rules, and prints one explained decision per candidate. The second command runs the same rule tests plus a CLI smoke test against that fixture.
+
+Expected test result: **14 tests pass** in the current checked-in suite. The [evaluation document](docs/06-evaluation-and-limitations.md) explains what that does and does not establish.
 
 ## Limitations and non-goals
 

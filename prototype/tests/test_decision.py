@@ -53,6 +53,11 @@ class CandidateDecisionTests(unittest.TestCase):
         result = evaluate_candidate(REQUIREMENT, candidate(transfer_permission="restricted"))
         self.assertEqual(result["status"], "ineligible")
 
+    def test_same_project_transfer_from_other_project_is_ineligible(self):
+        result = evaluate_candidate(REQUIREMENT, candidate(project_id="PROJECT-B"))
+        self.assertEqual(result["status"], "ineligible")
+        self.assertTrue(any("different project" in reason for reason in result["reasons"]))
+
     def test_unknown_transfer_requires_review(self):
         result = evaluate_candidate(REQUIREMENT, candidate(transfer_permission="unknown"))
         self.assertEqual(result["status"], "human_review")
